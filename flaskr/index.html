@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPRESA</title>
+</head>
+<style>
+/* Fontes */
+/* Variáveis de CSS */
+:root {
+    --cor-titulo: #1c4966;
+    --cor-subtitulo: #296d98;
+    --font-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque: 'Inter';
+}
+/* Imagem de fundo */
+body {
+    background-color: #535971;
+    background-color: #6A0025;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* Configurações do formulário */
+main {
+    min-width: 200px;
+    max-width: 600px;
+    background-color: white;
+    padding: 10px;
+    margin: auto;
+    border-top: 5px solid #AD003C;
+    border-bottom: 5px solid #AD003C;
+    border-radius: 10px;
+    font-family: var(--font-destaque);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+h1 {
+    text-align: center;
+    color: #AD003C;
+}
+fieldset {
+    margin: 10px;
+    border-radius: 5px;
+    border-color: #AD003C;
+}
+legend {
+    font-weight: 700;
+    color: var(--cor-subtitulo);
+}
+input {
+    border: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+}
+input:focus {
+    border: 2px solid #AD003C;
+}
+/* Caixa de texto "Fale sobre você" */
+textarea {
+    border: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+}
+textarea:focus {
+    border: 2px solid var(--cor-subtitulo);
+}
+/* Escolher o estado*/
+select {
+    border-radius: 5px;
+}
+select:focus {
+    border: 2px solid var(--cor-subtitulo);
+}
+/* Botão de enviar */
+.enviar {
+    background-color: var(--cor-titulo);
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.enviar:hover {
+    background-color: var(--cor-subtitulo);
+    border: 1px solid black;
+    color: white;
+}
+#center-buttonn{width:100%;height:40px;display:flex;justify-content:center;}
+input {width: 100%;height: 40px;font-size:20px;border-radius: 0px;}
+#inputdata {width: 45%;height: 40px;}
+#iest {width: 40%;height: 30px;border-radius: 0px;}
+#iestt {width: 40%;height: 30px;border-radius: 0px;}
+#bnt {width: 300px;height: 30px;border-radius: 0px;background-color: #AD003C;border: 1px solid #AD003C;border-radius: 10px;color:#ffffff;}
+label{color:black;font-size:20px;}
+option {font-size:20px;}
+</style>
+<body>
+    <main>
+			<form action="/editsection/{{idsection}}" method="post">
+					<div style="width:100%;height:150px;background-color:black;padding:1px;">
+						<h1><img style="" src="{{ url_for('static', filename='logo.jpeg')}}" width="50%;"></h1>
+					</div>
+            <h1>Cliente</h1>
+            <fieldset>
+                <p><label for="isobrenome">Tipo:</label><br>
+								<input type="text" name="tipo" id="inputdata" value="{{data.tipo}}" ></p>
+
+                <p><label for="isobrenome">Solicitação:</label><br>
+                <input type="text" name="solicitacao" id="inputdata" value="{{data.solicitacao}}" ></p>
+
+                <p><label for="isobrenome">Data:</label><br>
+                <input type="data" name="data" id="inputdata" value="{{data.data}}" ></p>
+								
+                <p><label for="itelefone">Centro de custo:</label>
+                <input type="text" name="centrodecusto" id="itelefone" value="{{data.centrodecusto}}" ></p>
+								
+                <p><label for="itelefone">Solicitante:</label>
+                <input type="text" name="solicitante" id="itelefone" value="{{data.solicitante}}" ></p>
+
+								<p><label for="iemail">Descrição do transporte / itinerário realizado:</label>
+                <input type="text" name="descricao" id="iemail" value="{{data.descricao}}" ></p>
+
+                <p><label>Nome dos empregados e/ ou pessoas transportadas:</label>
+                <input type="text" name="empregados" id="itelefone" value="{{data.empregados}}" ></p>
+
+            </fieldset>
+						<div style="width:100%;height:150px;background-color:black;padding:1px;">
+							<h1><img style="" src="{{ url_for('static', filename='logo.jpeg')}}" width="50%;"></h1>
+						</div>
+            <h1>Empresa</h1>
+						<fieldset>
+                <p><label for="isobrenome">Motorista:</label><br>
+								<input type="text" name="motorista" id="inputdata" value="{{data.motorista}}" ></p>
+
+                <p><label for="isobrenome">Veiculo:</label><br>
+                <input type="text" name="veiculo" id="inputdata" value="{{data.veiculo}}" ></p>
+
+                <p><label for="isobrenome">Placa:</label><br>
+                <input type="text" name="placa" id="inputdata" value="{{data.placa}}" ></p>
+								
+                <p><label for="itelefone">Km Inicial:</label>
+                <input type="text" name="kminicial" id="itelefone" value="{{data.kminicial}}" ></p>
+								
+                <p><label for="itelefone">Km Final:</label>
+                <input type="text" name="kmfinal" id="itelefone" value="{{data.kmfinal}}" ></p>
+		
+                <p><label for="itelefone">Km Rodado:</label>
+                <input type="text" name="kmrodado" id="itelefone" value="{{data.kmrodado}}" ></p>
+
+                <p><label for="itelefone">Horario Inicio:</label>
+                <input type="text" name="horainicio" id="itelefone" value="{{data.horainicio}}" ></p>
+
+                <p><label for="itelefone">Horario Final:</label>
+                <input type="text" name="horafinal" id="itelefone" value="{{data.horafinal}}" ></p>
+
+                <p><label for="itelefone">Hora Total:</label>
+                <input type="text" name="horatotal" id="itelefone" value="{{data.horatotal}}" ></p>
+
+                <input type="hidden" name="statuscliente"  value="{{data.statuscliente}}" ></p>
+                <input type="hidden" name="statusmotorista"  value="{{data.statusmotorista}}" ></p>
+
+                <p><label for="itelefone">Salvar:</label>
+                <input type="radio" name="salvar" id="itelefone" value="salvar"></p>
+
+                <p><label for="itelefone">Salvar e Guardar:</label>
+                <input type="radio" name="salvarguardar" id="itelefone" value="salvarguardar" ></p>
+
+								<input type="hidden" name="id" value="{{ idsection }}"></p>
+            </fieldset>
+						<div id="center-buttonn"><input type="submit" id="bnt" value="Enviar"></ul></div>
+        </form>
+				<div id="center-buttonn"><a href="http://{{ myip }}:5000/home"><button id="bnt" style="color:#ffffff;font-size:20px;">Voltar</button></a></ul></div>
+    </main>
+</body>
+<script>
+
+</script>
+</html>
