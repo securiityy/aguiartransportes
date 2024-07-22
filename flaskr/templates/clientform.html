@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aguiar-Transportes</title>
+</head>
+<style>
+:root {--cor-titulo: #1c4966;--cor-subtitulo: #296d98;--font-padrao: Arial, Verdana, Helvetica, sans-serif;--font-destaque: 'Inter';}
+body {background-color: #AD003C;background-color: #6A0025;background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;}
+main {min-width: 200px;max-width: 600px;background-color: white;padding: 10px;margin: auto;border-top: 5px solid #AD003C;border-bottom: 5px solid #AD003C;border-radius: 10px;font-family: var(--font-destaque);box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);}
+h1 {text-align: center;color: var(--cor-titulo);}
+fieldset {margin: 10px;border-radius: 5px;border-color: #AD003C;}
+legend {font-weight: 700;color: var(--cor-subtitulo);}
+input {border: 1px solid black;outline: none;border-radius: 5px;}
+input:focus {border: 2px solid #AD003C;}
+textarea {border: 1px solid black;outline: none;border-radius: 5px;}
+textarea:focus {border: 2px solid var(--cor-subtitulo);}
+select {border-radius: 5px;}
+select:focus {border: 2px solid var(--cor-subtitulo);}
+.enviar {background-color: var(--cor-titulo);color: white;border: 1px solid black;border-radius: 10px;padding: 10px;}
+.enviar:hover {background-color: var(--cor-subtitulo);border: 1px solid black;color: white;}
+#center-buttonn{width:100%;height:40px;display:flex;justify-content:center;}
+input {width: 100%;height: 40px;font-size:20px;border-radius: 0px;}
+#inputdata {width: 45%;height: 40px;}
+#iest {width: 40%;height: 30px;border-radius: 0px;}
+#iestt {width: 40%;height: 30px;border-radius: 0px;}
+#bnt {width: 300px;height: 30px;border-radius: 0px;background-color: #AD003C;border: 1px solid #AD003C;border-radius: 10px;color:#ffffff;}
+label{color:black;font-size:20px;}
+option {font-size:20px;}
+</style>
+<body>
+    <main>
+        <form action="/clientform" method="post">
+					<div style="width:100%;height:150px;background-color:black;padding:1px;">
+						<h1><img style="" src="{{ url_for('static', filename='logo.jpeg')}}" width="50%;"></h1>
+					</div>
+            <fieldset>
+							<p><label for="iest">Tipo:</label><br>
+                <select name="tipo" id="iest" required>
+                        <option value=""></option>
+                        <option value="Municipal">Municipal</option>
+                        <option value="Interestadual">Interestadual</option>
+                        <option value="Intermunicipal">Intermunicipal</option>
+                    </optgroup>
+                </select>
+                <p><label for="iest">Solicitação:</label><br>
+                <select name="solicitacao" id="iestt" required>
+                        <option value=""></option>
+                        <option value="CMA(Araxa)">CMA(Araxa)</option>
+                        <option value="CMT(Tapira)">CMT(Tapira)</option>
+                        <option value="CMP(Patrocinio)">CMP(Patrocinio)</option>
+                        <option value="CMBB(Particular)">CMBB(Particular)</option>
+                        <option value="outro">outro</option>
+                    </optgroup>
+                </select>
+                <p><label for="isobrenome">Data:</label><br>
+                <input type="date" name="data" id="inputdata" required></p>
+                <p><label for="itelefone">Centro de custo:</label>
+                <input type="number" name="centrodecusto" id="itelefone" required></p>
+                <p><label for="itelefone">Solicitante:</label>
+                <input type="text" name="solicitante" id="itelefone" required></p>
+								<p><label for="iemail">Descrição do transporte / itinerário realizado:</label>
+                <input type="textarea" name="descricao" id="iemail" required></p>
+                <p><label for="iemail">Nome dos empregados e/ ou pessoas transportadas:</label>
+                <input type="text" id="name-1"></p>
+                <input type="text" id="name-2"></p>
+                <input type="text" id="name-3"></p>
+                <input type="text" id="name-4"></p>
+                <input type="text" id="name-5"></p>
+                <input type="text" id="name-6"></p>
+                <input type="text" id="name-7"></p>
+                <input type="hidden" name="empregados" id="alll"></p>
+            </fieldset>
+						<div id="center-buttonn"><input type="submit" id="bnt" value="Adicionar cliente"></ul></div>
+        </form>
+				<div id="center-buttonn"><a href="http://{{ myip }}:5000/home"><button id="bnt" style="color:#ffffff;font-size:20px;">Voltar</button></a></ul></div>
+    </main>
+</body>
+<script>
+	function setall(){
+		name1 = document.getElementById("name-1").value;
+		name2 = document.getElementById("name-2").value;
+		name3 = document.getElementById("name-3").value;
+		name4 = document.getElementById("name-4").value;
+		name5 = document.getElementById("name-5").value;
+		name6 = document.getElementById("name-6").value;
+		name7 = document.getElementById("name-7").value;
+		document.getElementById("alll").value = 
+			name1+","
+			+name2+","
+			+name3+","
+			+name4+","
+			+name5+","
+			+name6+","
+			+name7;
+	};
+ setInterval(setall, 1000);
+</script>
+</html>

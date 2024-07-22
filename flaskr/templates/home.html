@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{{ myip }}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Aguiar-Transportes</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	</head>
+	<style>
+*{margin:0;padding:0;border:0;}
+.aaa table{ border-collapse: collapse;}
+.aaa td,tr,th{border:1px solid #000000;}
+.aaa td:hover,th:hover{background-color:#8DAA94;}
+a{color:#c9c9c9;}
+li:hover {background-color:#6A0025;}
+li a {text-decoration: none;}
+li a:hover {text-decoration: none;}
+.linhatabela:hover{background-color:#6C757D !important;}
+.datas{border-collapse: collapse;}
+.datas tr:hover{color:#ffffff;background-color:#256A3F;border:none;}
+.datas tr{color:#c9c9c9;border:none;}
+.linkblue tr:hover{color:#ffffff;background-color:#5B9BD5;}
+.linkblue tr a:hover{color:#ffffff;}
+#container{width:100vw;height:100vh;background-color:#E6E6E6;display:flex;font-family:ubuntu;}
+#container{width:100vw;height:100vh;background-color:#6a0025;display:flex;font-family:ubuntu;}
+	</style>
+	<body>
+		<div id="container">
+
+			<div style="width:10%;height:100%;background-color:#000000;color:#ffffff;">
+				<img style="margin:10px;" src="{{ url_for('static', filename='logo.jpeg') }}" width="80%">
+				<ul style="margin:10px;">
+					<li><a style="color:#ffffff;" href="http://{{ data['myip'] }}:5000/home">Home</a></li>
+					<li><a style="color:#ffffff;" href="http://{{ data['myip'] }}:5000/homephone">Phone</a></li>
+					<li><a style="color:#ffffff;" href="http://{{ data['myip'] }}:5000/clientform">Add Cliente</a></li>
+					<li><a style="color:#ffffff;" href="http://{{ data['myip'] }}:5000/tabela">Tabela</a></li>
+					<li><a style="color:#ffffff;" href="http://{{ data['myip'] }}:5000/home">Settings</a></li>
+				</ul>
+			</div>
+
+
+			<div style="width:90%;height:100%;">
+				<div style="width:100%;height:50%;display:flex;">
+					<div style="padding:1px;border:1px solid gray;width:25%;height:95%;background-color:#222429;color:#000000;border-radius:10px;margin:5px; box-shadow: 10px 10px 10px ;">
+						<table class="datas" style="color:#ffffff;heigth:100%;width:100%;font-size:12px;margin-top:5px;">
+							<tr><td>Total de km rodado</td><td><b>0</b></td></tr>
+							<tr><td>Total de km horas trabalhadas</td><td><b>0</b></td></tr>
+							<tr><td>Total de serviços realizados</td><td><b>{{ data.totalservicosrealizados }}</b></td></tr>
+							<tr><td>Total de serviços nao realizados</td><td><b>{{ data.totalservicosnaorealizados }}</b></td></tr>
+							<tr><td>serviços realizados hoje</td><td><b>{{ data.servicosrealizadoshoje }}</b></td></tr>
+							<tr><td>serviços realizados em 7 dias</td><td><b>{{ data.servicosrealizadosemsetedias }}</b></td></tr>
+							<tr><td>serviços realizados em 1 mês</td><td><b>{{ data.servicosrealizadosemtrintadias }}</b></td></tr>
+							<tr><td>serviços realizados em 1 ano</td><td><b>{{ data.servicosrealizadosemumano }}</b></td></tr>
+							<tr><td>media de serviços realizados por dia</td><td><b>0</b></td></tr>
+							<tr><td>media de serviços realizados por semana</td><td><b>0</b></td></tr>
+							<tr><td>media de serviços realizados por media</td><td><b>0</b></td></tr>
+							<tr><td>media de serviços realizados por ano</td><td><b>0</b></td></tr>
+						</table>
+					</div>
+
+					<div style="padding:1px;border:1px solid gray;width:10%;height:95%;background-color:#222429;color:#000000;border-radius:10px;margin:5px; box-shadow: 10px 10px 10px ;">
+						<table class="linkblue"style="color:#000000;heigth:100%;width:100%;font-size:12px;">
+							<tr style="border:none;"><th style="border:none;color:#ffffff;">Atalhos</th></tr>
+							<tr><td><a href="https://www.whatsapp.com"><b>Whatsapp</b></a></td></tr>
+							<tr><td><a href="https://discord.com"><b>Discord</b></a></td></tr>
+							<tr><td><a href="https://www.google.com/intl/pt-BR/gmail/about/ "><b>Gmail</b></a></td></tr>
+							<tr><td><a href=""><b><a href="http://{{ data['myip'] }}:5000/downloadfile">Download CSV</a></b></a></td></tr>
+							<tr><td><a href=""><b><a href="http://{{ data['myip'] }}:5000/downloadpdf">Download pdf</a></b></a></td></tr>
+							<tr><td><a href=""><b><a href="http://{{ data['myip'] }}:5000/downloadcsvempresa">Empresa CSV</a></b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+							<tr><td><a href=""><b>...</b></a></td></tr>
+						</table>
+					</div>
+
+
+
+
+
+				<div style="padding:1px;border:1px solid gray;width:15%;height:95%;background-color:#222429;color:#ffffff;border-radius:10px;margin:5px; box-shadow: 10px 10px 10px #000000;">
+						<table style="color:#ffffff;heigth:100%;width:100%;font-size:12px;">
+							<tr><td></td></tr>
+						</table>
+					</div>
+
+
+
+
+
+			<div style="padding:1px;border:1px solid gray;width:50%;height:95%;background-color:#222429;color:#ffffff;border-radius:10px;margin:5px; box-shadow: 10px 10px 10px #000000;">
+						<table style="color:#ffffff;heigth:100%;width:100%;font-size:12px;">
+							<tr><td></td></tr>
+						</table>
+					</div>
+
+
+
+
+
+
+				</div>
+				<!-- OPEN TABELA -->
+				<div class="aaa"style="width:100%;height:50%;display:flex;">
+					<div style="width:100%;height:94%;background-color:#ffffff;color:#000000;border-radius:10px;margin:5px; box-shadow: 10px 10px 10px #000000;border:1px solid gray;">
+						<div style="width:100%;height:100%;background-color:#222429;border-radius:10px;overflow:auto;font-size:14px;">
+							<table style="width:100%;">
+								<tr style="background-color:#256A3F;color:#000000;">
+									<th>Id</th>
+									<th>Solicitante</th>
+									<th>Motorista</th>
+									<th>Veiculo</th>
+									<th>Placa</th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+
+								{% for lista in lista %}
+								<tr class="linhatabela" style="background-color:#EFF3F0">
+									<td style="width:10px;"><a style="color:red;"href="http://{{ data['myip'] }}:5000/editsection/{{ lista[-1] }}">{{ lista[-1] }}</a></td>
+									<td>{{ lista[4] }}</td>
+									<td>{{ lista[7] }}</td>
+									<td>{{ lista[8] }}</td>
+									<td>{{ lista[9] }}</td>
+									<td></td>
+									{% if lista[-3] == 'on' and lista[-2] == 'off' %}
+										<td style="border:0px;"><div style="width:15px;height:15px;background-color:green;border-radius:100%;"></div></td>
+										<td style="border:0px;"><div style="width:15px;height:15px;background-color:red;border-radius:100%;"></div></td>
+									{% else %}
+										<td style="border:0px;"><div style="width:15px;height:15px;background-color:#198754;border-radius:100%;"></div></td>
+										<td style="border:0px;"><div style="width:15px;height:15px;background-color:#198754;border-radius:100%;"></div></td>
+									{% endif %}
+								</tr>
+								{% endfor %}
+
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- CLOSE TABELA -->
+			</div>
+
+
+			
+
+
+		</div>
+	</body>
+</html> 
