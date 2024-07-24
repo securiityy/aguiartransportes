@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Aguiar-Transportes</title>
+		<link rel="shortcut icon" type="imagex/png" src="{{ url_for('static', filename='logo.jpeg') }}">
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+
+
+
+	</head>
+	 <style>
+*{margin:0px;padding:0px;}
+body{background-color:#222429; font-family:'Ubuntu';}
+table a{color:blue;}
+table a:hover{color:red;}
+h3 a{color:#B8BBC3;text-decoration:none;}
+h3:hover{color:#ffffff;background-color:#5B9BD5 ;}
+h3 a:hover{color:#ffffff;text-decoration:none;}
+
+li:hover {background-color:#6A0025;}
+li a {text-decoration: none;}
+
+th{border:1px solid #000000;}
+td:hover{background-color:#2c5578;color:#ffffff;}
+td{color:#000000;border:1px solid #000000;}
+#linha-1{background-color:#DDEBF7;}
+#linha-2{background-color:#ffffff;}
+
+
+#container{width:100vw;height:100vh;display:flex; flex-direction:row;}
+#container-column1{width:10%;height:100%;background-color:#2D323E;}
+#container-column2{width:90%;height:100%;}
+	 </style>
+	<body>
+
+		<div id="container">
+			<div style="width:10%;height:100%;background-color:#000000;color:#ffffff;">
+				<img style="margin:10px;" src="{{ url_for('static', filename='logo.jpeg') }}" width="80%">
+				<ul style="margin:10px;">
+					<li><a style="color:#ffffff;" href="http://{{ myip }}:5000/home">Home</a></li>
+					<li><a style="color:#ffffff;" href="http://{{ myip }}:5000/clientform">Add Cliente</a></li>
+					<li><a style="color:#ffffff;" href="http://{{ myip }}:5000/tabela">Tabela</a></li>
+					<li><a style="color:#ffffff;" href="http://{{ myip }}:5000/home">Settings</a></li>
+				</ul>
+			</div>
+
+
+
+			<div id="container-column2"style="overflow:scroll;">
+				<table style="color:#ffffff;font-size:13px;width:2000px;border-collapse:collapse;">
+					<tr style="border:1px solid #000000;background-color:#5B9BD5;">
+					<!--<th>.</th>
+						<th>.</th>-->
+						<th>Tipo</th>
+						<th>solicitaçao</th>
+						<th>Data</th>
+						<th>Centro custo</th>
+						<th>Solicitante</th>
+						<th>Descriçao</th>
+						<th>Empregados</th>
+						<th>Motorista</th>
+						<th>Veiculo</th>
+						<th>Placa</th>
+						<th>Kminicial</th>
+						<th>Kmfinal</th>
+						<th>Kmrodado</th>
+						<th>horainicial</th>
+						<th>horafinal</th>
+						<th>horatotal</th>
+						<th>id</th>
+						<th>Valor serviço</th>
+					</tr>
+					{% set alternar = 0 %}
+					{% for data in data %}
+							<tr id="linha-1">
+							<!--<td style="width:26px;">
+									<a href="http://localhost:5000/japangames/tabelacompra/{{ data[1] }}"><button>Editar</button></a>
+								</td>
+								<td>
+									<form action="/japangames/tabelacompra" method="post"style="width:26px;">
+										<input type="hidden" name="excluir" value="{{ data[1] }}">
+										<input type="submit" value="Excluir" style="">
+									</form>
+								</td>-->
+								<td>{{ data[0] }}</td>
+								<td>{{ data[1] }}</td>
+								<td>{{ data[2] }}</td>
+								<td>{{ data[3] }}</td>
+								<td>{{ data[4] }}</td>
+								<td>{{ data[5] }}</td>
+								<td>{{ data[6] }}</td>
+								<td>{{ data[7] }}</td>
+								<td>{{ data[8] }}</td>
+								<td>{{ data[9] }}</td>
+								<td>{{ data[10] }}</td>
+								<td>{{ data[11] }}</td>
+								<td>{{ data[12] }}</td>
+								<td>{{ data[13] }}</td>
+								<td>{{ data[14] }}</td>
+								<td>{{ data[15] }}</td>
+								<td>{{ data[16] }}</td>
+								<td>{{ data[17] }}</td>
+							</tr>
+					{% endfor %}
+				</table>
+			</div>
+
+
+		</div>
+	</body>
+</html>
+
+
+
+
